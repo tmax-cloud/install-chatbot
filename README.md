@@ -1,4 +1,4 @@
-# Botpress를 통한 chatbot 활용 가이드
+# install-chatbot
 
 
 ## About Botpress
@@ -50,5 +50,3 @@
     ![1.URL.png](./img/1.URL.png)     
     ![2.language.png](./img/2.language.png)  
 
-## 참고 : workflow 설계 및 nlu 사용 가이드
-[chatbot_user_guide.pdf](./chatbot_user_guide.pdf) 
