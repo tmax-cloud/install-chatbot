@@ -1,5 +1,5 @@
 # install-chatbot
-
+*** 사용 가이드는 guide 디렉토리 참고
 
 ## About Botpress
 * Opensource Chatbot platform
