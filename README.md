@@ -1,3 +1,54 @@
-# install-chatbot
+# Botpress를 통한 chatbot 활용 가이드
 
-chatbot 인스톨 및 사용가이드 작성중입니다.
+
+## About Botpress
+* Opensource Chatbot platform
+* intent(의도) 인식, 스펠링 검사, entity(개체) 추출, 슬롯 태깅과 같은 NLP task 내장
+* workflow 설계를 위한 스튜디오 제공
+* 대화를 시뮬레이션하고 챗봇을 디버깅하는 emulator, debugger 제공
+* Slack과 같은 메시징 채널 지원
+* 기능 확장을 위한 SDK & code editor 지원   
+* 분석 dashboard 등 배포 후 도구(post-deployment tool) 지원
+
+
+## Install Steps
+1. [Botpress server 배포](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-0-kfctl-%EC%84%A4%EC%B9%98)
+2. [Custom language server 배포](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-1-%EC%84%A4%EC%B9%98-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%83%9D%EC%84%B1)
+3. [Language server 연동을 통한 nlu 적용](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-2-kustomize-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%83%9D%EC%84%B1)
+
+## Step 1. Botpress server 배포
+* 목적 : `Botpress server를 설치한다.`
+* 생성 순서 
+    * [1.botpress.yaml](./1.botpress.yaml) 배포 `ex) kubectl apply -f 1.botpress.yaml`
+    * 아래 명령어를 수행하여 botpress server pod가 정상적인지 확인한다.
+        ```bash
+        $ kubectl get pod -n chatbot
+        ```
+    * Botpress stuido에 접속 확인 후 계정 생성
+        * `kubectl get svc chatbot -n chatbot` 명령어로 port 확인        
+* 비고 : 
+    * 서비스는 NodePort 타입, 스토리지 클래스는 default storage class로 적용되어 있음, 필요시 해당 환경에 따라 수정
+
+## Step 2. Custom language server 배포
+* 목적 : `한국어 nlu 적용을 위해 관련 bin, model 파일이 포함된 커스텀 랭귀지 서버를 설치한다.`
+* 생성 순서 
+    * [2.custom-language-server.yaml](./2.custom-language-server.yaml) 배포 `ex) kubectl apply -f 2.custom-language-server.yaml`
+    * 아래 명령어를 수행하여 custom language server pod가 정상상태인지 체크하고 해당 서비스 IP를 확인한다.
+        ```bash
+        $ kubectl get pod -n chatbot
+        $ kubectl get svc -n chatbot
+        ```
+
+## Step 3. Language server 연동을 통한 nlu 적용
+* 목적 : `몇가지 설정을 통해 앞서 배포한 봇프레스 서버와 랭귀지 서버를 연동한다.`
+* 생성 순서 
+    * 봇프레스 서버 ui 화면에서 code-editor 버튼을 클릭한 후 nlu.json 파일을 수정한다.
+        * ducklingURL -> http://localhost:8000
+        * languageSources.endpoint -> 앞의 단계에서 확인한 랭귀지 서버 서비스의 ip       
+    * 생성한 봇의 config 화면에서 Language 부분을 isoLangs.ko.name으로 변경 후 저장
+        * 화면 하단의 restart server 버튼이 뜬다면 클릭하여 서버를 reboot한다.
+    ![1.URL.png](./img/1.URL.png)     
+    ![2.language.png](./img/2.language.png)  
+
+## 참고 : workflow 설계 및 nlu 사용 가이드
+*[chatbot_user_guide.pdf](./chatbot_user_guide.pdf) 
