@@ -12,9 +12,9 @@
 
 
 ## Install Steps
-1. [Botpress server 배포](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-0-kfctl-%EC%84%A4%EC%B9%98)
-2. [Custom language server 배포](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-1-%EC%84%A4%EC%B9%98-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%83%9D%EC%84%B1)
-3. [Language server 연동을 통한 nlu 적용](https://github.com/tmax-cloud/install-ai-devops/tree/5.0#step-2-kustomize-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%83%9D%EC%84%B1)
+1. [Botpress server 배포](https://github.com/tmax-cloud/install-chatbot#step-1-botpress-server-%EB%B0%B0%ED%8F%AC)
+2. [Custom language server 배포](https://github.com/tmax-cloud/install-chatbot#step-2-custom-language-server-%EB%B0%B0%ED%8F%AC)
+3. [Language server 연동을 통한 nlu 적용](https://github.com/tmax-cloud/install-chatbot#step-3-language-server-%EC%97%B0%EB%8F%99%EC%9D%84-%ED%86%B5%ED%95%9C-nlu-%EC%A0%81%EC%9A%A9)
 
 ## Step 1. Botpress server 배포
 * 목적 : `Botpress server를 설치한다.`
@@ -51,4 +51,4 @@
     ![2.language.png](./img/2.language.png)  
 
 ## 참고 : workflow 설계 및 nlu 사용 가이드
-*[chatbot_user_guide.pdf](./chatbot_user_guide.pdf) 
+[chatbot_user_guide.pdf](./chatbot_user_guide.pdf) 
