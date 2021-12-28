@@ -2,12 +2,12 @@
 
 
 ## steps
-1. [Bot 생성](https://github.com/tmax-cloud/install-chatbot#step-1-botpress-server-%EB%B0%B0%ED%8F%AC)
-2. [About node&workflow](https://github.com/tmax-cloud/install-chatbot#step-2-custom-language-server-%EB%B0%B0%ED%8F%AC)
-3. [Workflow 설계](https://github.com/tmax-cloud/install-chatbot#step-2-custom-language-server-%EB%B0%B0%ED%8F%AC)
-4. [Choice](https://github.com/tmax-cloud/install-chatbot#step-3-language-server-%EC%97%B0%EB%8F%99%EC%9D%84-%ED%86%B5%ED%95%9C-nlu-%EC%A0%81%EC%9A%A9)
-5. [Emulator](https://github.com/tmax-cloud/install-chatbot#step-3-language-server-%EC%97%B0%EB%8F%99%EC%9D%84-%ED%86%B5%ED%95%9C-nlu-%EC%A0%81%EC%9A%A9)
-6. [NLU](https://github.com/tmax-cloud/install-chatbot#step-3-language-server-%EC%97%B0%EB%8F%99%EC%9D%84-%ED%86%B5%ED%95%9C-nlu-%EC%A0%81%EC%9A%A9)
+1. [Bot 생성](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-1-bot-%EC%83%9D%EC%84%B1)
+2. [About node&workflow](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-2-about-nodeworkflow)
+3. [Workflow 설계](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-3-workflow-%EC%84%A4%EA%B3%84)
+4. [Choice](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-4-choice)
+5. [Emulator](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-5-emulator)
+6. [NLU](https://github.com/tmax-cloud/install-chatbot/tree/main/guide#step-6-nlu)
 
 ## Step 1. Bot 생성
 * 목적 : `Bot을 생성한다.`
