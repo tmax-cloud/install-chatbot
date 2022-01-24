@@ -20,8 +20,8 @@ spec:
         - command:
           - /bin/bash
           - -c
-          - ./bp lang --offline --dim 300 --langDir ./data/embeddings/
-          image: kitaeyoo777/korean-nlu:test1
+          - ./bp lang --offline --dim 300 --langDir /data/embeddings/
+          image: kitaeyoo777/korean-nlu:test4
           name: korean-nlu-server
           imagePullPolicy: Always
           ports:
