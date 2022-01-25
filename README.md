@@ -44,9 +44,12 @@
 * 생성 순서 
     * 봇프레스 서버 ui 화면에서 code-editor 버튼을 클릭한 후 nlu.json 파일을 수정한다.
         * ducklingURL -> http://localhost:8000
-        * languageSources.endpoint -> 앞의 단계에서 확인한 랭귀지 서버 서비스의 ip       
+        * languageSources.endpoint -> 앞의 단계에서 확인한 랭귀지 서버 서비스의 ip 
+    * 봇프레스 서버 ui 화면에서 code-editor 버튼을 클릭한 후 botpress.config.json 파일을 수정한다.   
+        * additionalLanguages -> code: ko, name: Korean       
     * 생성한 봇의 config 화면에서 Language 부분을 isoLangs.ko.name으로 변경 후 저장
         * 화면 하단의 restart server 버튼이 뜬다면 클릭하여 서버를 reboot한다.
     ![1.URL.png](./img/1.URL.png)     
+    ![3.additionallang.png](./img/3.additionallang.png)
     ![2.language.png](./img/2.language.png)  
 
