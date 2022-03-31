@@ -19,15 +19,18 @@
 ## Step 1. Botpress server 배포
 * 목적 : `Botpress server를 설치한다.`
 * 생성 순서 
+    * [1.botpress.yaml](./1.botpress.yaml) 환경 변수 수정
+        * 1.botpress.yaml 파일의 ingress 리소스의 {CUSTOM_DOMAIN_NAME} 부분을 해당 환경에 맞는 ingress 접근 주소로 수정한다.
     * [1.botpress.yaml](./1.botpress.yaml) 배포 `ex) kubectl apply -f 1.botpress.yaml`
     * 아래 명령어를 수행하여 botpress server pod가 정상적인지 확인한다.
         ```bash
         $ kubectl get pod -n chatbot
         ```
     * Botpress stuido에 접속 확인 후 계정 생성
-        * `kubectl get svc chatbot -n chatbot` 명령어로 port 확인        
+        * `kubectl get ingress -n chatbot` 명령어로 확인된 ingress HOSTS 주소를 통하여 studio에 접속한다.      
 * 비고 : 
     * 서비스는 NodePort 타입, 스토리지 클래스는 default storage class로 적용되어 있음, 필요시 해당 환경에 따라 수정
+    * 인그레스를 사용하지 않는 환경에서는 ingress 리소스를 생성하지 않고 nodeport로 생성된 서비스의 포트번호를 확인하여 접속한다.
 
 ## Step 2. Custom language server 배포
 * 목적 : `한국어 nlu 적용을 위해 관련 bin, model 파일이 포함된 커스텀 랭귀지 서버를 설치한다.`
