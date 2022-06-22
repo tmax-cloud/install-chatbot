@@ -66,6 +66,8 @@ kind: Service
 metadata:
   labels:
     app: chatbot
+  annotations:
+    traefik.ingress.kubernetes.io/service.serverstransport: insecure@file
   name: chatbot
   namespace: chatbot
 spec:
