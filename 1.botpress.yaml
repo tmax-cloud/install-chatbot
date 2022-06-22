@@ -67,7 +67,7 @@ metadata:
   labels:
     app: chatbot
   annotations:
-    traefik.ingress.kubernetes.io/service.serverstransport: insecure@file
+    traefik.ingress.kubernetes.io/service.serverstransport: tmaxcloud@file
   name: chatbot
   namespace: chatbot
 spec:
