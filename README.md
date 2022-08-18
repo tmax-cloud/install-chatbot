@@ -56,3 +56,17 @@
     ![3.additionallang.png](./img/3.additionallang.png)
     ![2.language.png](./img/2.language.png)  
 
+## Step 4. Hypercloud console용 bot import   
+* 목적 : `hypercloud console용 flow가 구성되어있는 bot을 import함으로써 콘솔화면에서 챗봇을 이용할수 있게 한다.`
+* 생성 순서 
+    * hypercloud console용 bot을 다운로드한다.
+    [bot_console-bot_1660631815372.tgz](./bot_console-bot_1660631815372.tgz)
+    * 봇프레스 서버 ui 화면에서 Create Bot 버튼을 클릭한 후 import Existing 버튼을 클릭한다.       
+    * Bot ID는 따로 작성하지 않고 Bot Archive 필드에서 Browse를 클릭후 위에서 다운로드한 bot파일을 선택한다.       
+    ![4.createBot.png](./img/4.createBot.png)     
+    ![5.importBot.png](./img/5.importBot.png)
+* 참고
+    * 임포트 된 봇의 이용 방법은 다음 가이드를 참고한다    
+    [hypercloud_chatbot_user_guide.pdf](./guide/hypercloud_chatbot_user_guide.pdf)  
+    
+

@@ -21,11 +21,7 @@ spec:
         app: chatbot
     spec:
       containers:
-        - command:
-          - /bin/bash
-          - -c
-          - ./duckling -p 8000 & ./bp
-          image: botpress/server:v12_26_6
+        - image: docker.io/tmaxcloudck/chatbot:b0.0.10
           name: botpress-prod
           imagePullPolicy: Always
           ports:
@@ -34,32 +30,14 @@ spec:
           resources:
             limits:
               cpu: 1000m
-              memory: 1000Mi
+              memory: 2000Mi
             requests:
-              cpu: 500m
-              memory: 500Mi
-          env:
-            - name: PORT
-              value: "3000"
-            - name: BP_HOST
-              value: "localhost"
-            - name: BP_PRODUCTION
-              value: "true"
-            - name: EXTERNAL_URL
-              value: http://localhost:3000
-            - name: BP_MODULE_NLU_DUCKLINGURL
-              value: http://localhost:8000
+              cpu: 1000m
+              memory: 2000Mi
           readinessProbe:
             httpGet:
               path: /
               port: 3000
-          volumeMounts:
-          - mountPath: /botpress/data
-            name: chatbot
-      volumes:
-      - name: chatbot
-        persistentVolumeClaim:
-          claimName: chatbot
 ---
 apiVersion: v1
 kind: Service
@@ -79,18 +57,6 @@ spec:
     app: chatbot
   sessionAffinity: None
   type: NodePort
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: chatbot
-  namespace: chatbot
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
