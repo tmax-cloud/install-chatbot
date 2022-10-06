@@ -21,7 +21,17 @@ spec:
         app: chatbot
     spec:
       containers:
-        - image: docker.io/tmaxcloudck/chatbot:b0.0.10
+        - image: docker.io/tmaxcloudck/chatbot:b0.0.15
+          command:
+            - sh
+            - "-c"
+            - |
+              /bin/bash
+              yarn start &
+              sleep 20
+              sh /botpress/import_bot.sh
+              sleep 50
+              yarn start
           name: botpress-prod
           imagePullPolicy: Always
           ports:
